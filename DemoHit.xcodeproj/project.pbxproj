@@ -11,6 +11,10 @@
 		8DD1CE03292E84800051BB38 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD1CE02292E84800051BB38 /* SceneDelegate.swift */; };
 		8DD1CE0A292E84820051BB38 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8DD1CE09292E84820051BB38 /* Assets.xcassets */; };
 		8DD1CE0D292E84820051BB38 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DD1CE0B292E84820051BB38 /* LaunchScreen.storyboard */; };
+		8DD1CE16292E85B70051BB38 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD1CE15292E85B70051BB38 /* TabBarController.swift */; };
+		8DD1CE18292E85CD0051BB38 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD1CE17292E85CD0051BB38 /* NavigationController.swift */; };
+		8DD1CE1B292E85F70051BB38 /* LineLaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD1CE1A292E85F70051BB38 /* LineLaunchViewController.swift */; };
+		8DD1CE1E292E86210051BB38 /* SlingshotLaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD1CE1D292E86210051BB38 /* SlingshotLaunchViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +24,10 @@
 		8DD1CE09292E84820051BB38 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8DD1CE0C292E84820051BB38 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8DD1CE0E292E84820051BB38 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8DD1CE15292E85B70051BB38 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		8DD1CE17292E85CD0051BB38 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
+		8DD1CE1A292E85F70051BB38 /* LineLaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineLaunchViewController.swift; sourceTree = "<group>"; };
+		8DD1CE1D292E86210051BB38 /* SlingshotLaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlingshotLaunchViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +60,10 @@
 		8DD1CDFF292E84800051BB38 /* DemoHit */ = {
 			isa = PBXGroup;
 			children = (
+				8DD1CE1F292E86320051BB38 /* Core */,
+				8DD1CE1C292E86040051BB38 /* SlingshotLaunch */,
+				8DD1CE19292E85E70051BB38 /* LineLaunch */,
+				8DD1CE14292E85A70051BB38 /* Navigation */,
 				8DD1CE00292E84800051BB38 /* AppDelegate.swift */,
 				8DD1CE02292E84800051BB38 /* SceneDelegate.swift */,
 				8DD1CE09292E84820051BB38 /* Assets.xcassets */,
@@ -59,6 +71,38 @@
 				8DD1CE0E292E84820051BB38 /* Info.plist */,
 			);
 			path = DemoHit;
+			sourceTree = "<group>";
+		};
+		8DD1CE14292E85A70051BB38 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				8DD1CE15292E85B70051BB38 /* TabBarController.swift */,
+				8DD1CE17292E85CD0051BB38 /* NavigationController.swift */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
+		8DD1CE19292E85E70051BB38 /* LineLaunch */ = {
+			isa = PBXGroup;
+			children = (
+				8DD1CE1A292E85F70051BB38 /* LineLaunchViewController.swift */,
+			);
+			path = LineLaunch;
+			sourceTree = "<group>";
+		};
+		8DD1CE1C292E86040051BB38 /* SlingshotLaunch */ = {
+			isa = PBXGroup;
+			children = (
+				8DD1CE1D292E86210051BB38 /* SlingshotLaunchViewController.swift */,
+			);
+			path = SlingshotLaunch;
+			sourceTree = "<group>";
+		};
+		8DD1CE1F292E86320051BB38 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Core;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -131,6 +175,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8DD1CE16292E85B70051BB38 /* TabBarController.swift in Sources */,
+				8DD1CE18292E85CD0051BB38 /* NavigationController.swift in Sources */,
+				8DD1CE1B292E85F70051BB38 /* LineLaunchViewController.swift in Sources */,
+				8DD1CE1E292E86210051BB38 /* SlingshotLaunchViewController.swift in Sources */,
 				8DD1CE01292E84800051BB38 /* AppDelegate.swift in Sources */,
 				8DD1CE03292E84800051BB38 /* SceneDelegate.swift in Sources */,
 			);
