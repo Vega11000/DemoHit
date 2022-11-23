@@ -6,23 +6,26 @@
 //
 
 import UIKit
+import SpriteKit
+import GameplayKit
 
 
 final class SlingshotLaunchViewController: UIViewController {
     
-    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
-        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-    }
-    
-    override func loadView() {
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        view = SKView(frame: view.bounds)
+        
+        if let view = self.view as! SKView? {
+            let scene = GameScene(size: view.bounds.size)
+
+            scene.scaleMode = .aspectFill
+
+            view.presentScene(scene)
+        }
     }
+    
+    
 }
 
