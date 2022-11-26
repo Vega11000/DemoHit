@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		63C3CC722932782F0088EEC7 /* Rocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C3CC6F2932782F0088EEC7 /* Rocket.swift */; };
+		63C3CC732932782F0088EEC7 /* PhysicalBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C3CC702932782F0088EEC7 /* PhysicalBody.swift */; };
+		63C3CC742932782F0088EEC7 /* Planet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C3CC712932782F0088EEC7 /* Planet.swift */; };
+		63C3CC782932783A0088EEC7 /* GravitySystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C3CC752932783A0088EEC7 /* GravitySystem.swift */; };
+		63C3CC792932783A0088EEC7 /* FactoryPlanets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C3CC762932783A0088EEC7 /* FactoryPlanets.swift */; };
+		63C3CC7A2932783A0088EEC7 /* VectorMaths.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C3CC772932783A0088EEC7 /* VectorMaths.swift */; };
 		8D8A90B4292E88390089E36B /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8A90B3292E88390089E36B /* GameScene.swift */; };
 		8DD1CE01292E84800051BB38 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD1CE00292E84800051BB38 /* AppDelegate.swift */; };
 		8DD1CE03292E84800051BB38 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD1CE02292E84800051BB38 /* SceneDelegate.swift */; };
@@ -19,6 +25,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		63C3CC6F2932782F0088EEC7 /* Rocket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rocket.swift; sourceTree = "<group>"; };
+		63C3CC702932782F0088EEC7 /* PhysicalBody.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhysicalBody.swift; sourceTree = "<group>"; };
+		63C3CC712932782F0088EEC7 /* Planet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Planet.swift; sourceTree = "<group>"; };
+		63C3CC752932783A0088EEC7 /* GravitySystem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GravitySystem.swift; sourceTree = "<group>"; };
+		63C3CC762932783A0088EEC7 /* FactoryPlanets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FactoryPlanets.swift; sourceTree = "<group>"; };
+		63C3CC772932783A0088EEC7 /* VectorMaths.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VectorMaths.swift; sourceTree = "<group>"; };
 		8D8A90B3292E88390089E36B /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		8DD1CDFD292E84800051BB38 /* DemoHit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoHit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DD1CE00292E84800051BB38 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -43,6 +55,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		63C3CC6E2932782F0088EEC7 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				63C3CC6F2932782F0088EEC7 /* Rocket.swift */,
+				63C3CC702932782F0088EEC7 /* PhysicalBody.swift */,
+				63C3CC712932782F0088EEC7 /* Planet.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
 		8DD1CDF4292E84800051BB38 = {
 			isa = PBXGroup;
 			children = (
@@ -95,7 +117,11 @@
 		8DD1CE1C292E86040051BB38 /* SlingshotLaunch */ = {
 			isa = PBXGroup;
 			children = (
+				63C3CC6E2932782F0088EEC7 /* Entities */,
 				8DD1CE1D292E86210051BB38 /* SlingshotLaunchViewController.swift */,
+				63C3CC762932783A0088EEC7 /* FactoryPlanets.swift */,
+				63C3CC752932783A0088EEC7 /* GravitySystem.swift */,
+				63C3CC772932783A0088EEC7 /* VectorMaths.swift */,
 				8D8A90B3292E88390089E36B /* GameScene.swift */,
 			);
 			path = SlingshotLaunch;
@@ -178,13 +204,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63C3CC732932782F0088EEC7 /* PhysicalBody.swift in Sources */,
+				63C3CC782932783A0088EEC7 /* GravitySystem.swift in Sources */,
 				8DD1CE16292E85B70051BB38 /* TabBarController.swift in Sources */,
 				8DD1CE18292E85CD0051BB38 /* NavigationController.swift in Sources */,
 				8DD1CE1B292E85F70051BB38 /* LineLaunchViewController.swift in Sources */,
 				8DD1CE1E292E86210051BB38 /* SlingshotLaunchViewController.swift in Sources */,
+				63C3CC792932783A0088EEC7 /* FactoryPlanets.swift in Sources */,
 				8DD1CE01292E84800051BB38 /* AppDelegate.swift in Sources */,
 				8D8A90B4292E88390089E36B /* GameScene.swift in Sources */,
 				8DD1CE03292E84800051BB38 /* SceneDelegate.swift in Sources */,
+				63C3CC722932782F0088EEC7 /* Rocket.swift in Sources */,
+				63C3CC7A2932783A0088EEC7 /* VectorMaths.swift in Sources */,
+				63C3CC742932782F0088EEC7 /* Planet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
