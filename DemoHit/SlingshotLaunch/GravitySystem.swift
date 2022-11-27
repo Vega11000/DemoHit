@@ -11,7 +11,7 @@ final class GravitySystem : SKNode {
     
     private var rocket: Rocket?
     private var planets = [Planet]()
-    private var lineTrailFadeDuration = 2.5
+    private var lineTrailFadeDuration = 1.5
     
     func add(planet: Planet) {
         planet.node.physicsBody?.isDynamic = false
@@ -25,7 +25,11 @@ final class GravitySystem : SKNode {
     }
     
     func startRocket(vector: CGVector) {
-        rocket!.node.physicsBody?.velocity = CGVector(dx: vector.dx, dy: vector.dy)
+        rocket?.node.physicsBody?.velocity = CGVector(dx: vector.dx, dy: vector.dy)
+    }
+    
+    func rotateRocket(vector: CGVector) {
+        rocket?.node.zRotation = -atan2(vector.dx, vector.dy)
     }
         
     func update() {
@@ -44,8 +48,10 @@ final class GravitySystem : SKNode {
             path.addLine(to: rocket.position)
 
             let lineSeg = SKShapeNode(path: path)
-            lineSeg.strokeColor = rocket.color
-            lineSeg.fillColor = rocket.color
+            lineSeg.lineCap = .butt
+            lineSeg.lineWidth = 5
+            lineSeg.strokeColor = .red
+            lineSeg.fillColor = .red
             addChild(lineSeg)
 
             lineSeg.run(SKAction.sequence([SKAction.fadeOut(withDuration: lineTrailFadeDuration), SKAction.removeFromParent()]))

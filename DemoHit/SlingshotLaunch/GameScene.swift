@@ -8,18 +8,18 @@ final class GameScene: SKScene {
     
     static var userHasSetAVector: Bool = false                  //Задал ли пользователь вектор движению ракеты
     private let panGestureRecognizer = UIPanGestureRecognizer()
-    private let powerIncreaseStep: Double = 130.0                //Шаг для увелечения мощности запуска ракеты
-    private let timeForMostPowerfulLaunch: Double = 3          //Время, нужное для запуска ракеты на полную мощность(потолок)
-    var launchPower: Double = 0
+    private let powerIncreaseStep: Double = 100.0                //Шаг для увелечения мощности запуска ракеты
+    private let timeForMostPowerfulLaunch: Double = 5          //Время, нужное для запуска ракеты на полную мощность(потолок)
     
     private var timeAtTouchDown = Date.timeIntervalSinceReferenceDate
     private lazy var locationOfTouchDown = CGPoint()
     private var placerLine: SKShapeNode?                        //нод для отображения вектора
-    private lazy var userTaped: Bool = false                    //Начал ли юзер задавать вектор движения
+    private var userTapped: Bool = false
     
     private enum Constants {
         static var widthConstant: CGFloat = 50
         static var heightConstant: CGFloat = 50
+        static var multiply: CGFloat = 10
     }
     
     override func didMove(to view: SKView) {
@@ -32,18 +32,10 @@ final class GameScene: SKScene {
     override func update(_ currentTime: TimeInterval) {
         gravitySystem.update()
         
-        if userTaped {
-            let durationOfPress = Date.timeIntervalSinceReferenceDate - timeAtTouchDown
-            let levelLaunchPower = durationOfPress.truncatingRemainder(dividingBy: timeForMostPowerfulLaunch)
-            launchPower = levelLaunchPower * powerIncreaseStep
-            
-            if levelLaunchPower < (timeForMostPowerfulLaunch / 3) {
-                indicatorNode?.color = .green
-            } else if levelLaunchPower < (2 * timeForMostPowerfulLaunch / 3) {
-                indicatorNode?.color = .orange
-            } else {
-                indicatorNode?.color = .red
-            }
+        if userTapped && indicatorNode?.hasActions() == false {
+            indicatorNode?.color = .green
+            indicatorNode?.size.height = Constants.heightConstant
+            startIndicatorAction()
         }
     }
 }
@@ -55,7 +47,7 @@ private extension GameScene {
                              at: CGPoint(x: frame.size.width/2, y: frame.size.height/2),
                              level: 0)
         
-        indicatorNode = setNode(an: nil, at: CGPoint(x: size.width / 5, y: size.height / 6), level: 0)
+        indicatorNode = setNode(an: nil, at: CGPoint(x: size.width / 10, y: size.height / 8), level: 0)
         indicatorNode?.size = CGSize(width: Constants.widthConstant, height: Constants.heightConstant)
         indicatorNode?.color = .green
     }
@@ -73,7 +65,7 @@ private extension GameScene {
         let factory = FactoryPlanets()
         let mediumPlanet = factory.getMediumPlanet()
         let bigPlanet = factory.getBigPlanet()
-        mediumPlanet.position = CGPoint(x: size.width / 1.3, y: size.height / 3)
+        mediumPlanet.position = CGPoint(x: size.width / 1.3, y: size.height / 2.2)
         bigPlanet.position = CGPoint(x: size.width / 3, y: size.height / 1.3)
         
         gravitySystem.add(planet: mediumPlanet)
@@ -106,6 +98,12 @@ private extension GameScene {
         self.view?.addGestureRecognizer(panGestureRecognizer)
     }
     
+    func startIndicatorAction() {
+        let actionColorize = SKAction.colorize(with: .red, colorBlendFactor: 0, duration: timeForMostPowerfulLaunch)
+        let actionSize = SKAction.resize(toHeight: Constants.multiply * Constants.heightConstant, duration: timeForMostPowerfulLaunch)
+        indicatorNode?.run(SKAction.group([actionColorize, actionSize]))
+    }
+    
     @objc func handlePanGestureRecognizer(gesture: UIPanGestureRecognizer) {
         
         var touchLocation = gesture.location(in: gesture.view)
@@ -113,11 +111,15 @@ private extension GameScene {
         
         switch gesture.state {
         case .began:
-            userTaped = true
+            userTapped = true
+            startIndicatorAction()
+            
             timeAtTouchDown = Date.timeIntervalSinceReferenceDate
             locationOfTouchDown = touchLocation
             
         case .changed:
+            let panVector = create(a: locationOfTouchDown, b: touchLocation)
+            gravitySystem.rotateRocket(vector: panVector)
             if placerLine != nil {
                 placerLine!.removeFromParent()
                 placerLine = nil
@@ -134,15 +136,21 @@ private extension GameScene {
             
         case .ended, .failed:
             GameScene.userHasSetAVector = true
+            userTapped = false
+            
+            let durationOfPress = Date.timeIntervalSinceReferenceDate - timeAtTouchDown
+            let levelLaunchPower = durationOfPress.truncatingRemainder(dividingBy: timeForMostPowerfulLaunch)
+            let launchPower = levelLaunchPower * powerIncreaseStep
             
             var panVector = create(a: locationOfTouchDown, b: touchLocation)
             panVector = normalize(a: panVector)
             panVector = mult(a: panVector, b: CGFloat(launchPower))
-            
+            print(launchPower)
             gravitySystem.startRocket(vector: panVector)
             
-            userTaped = false
+            indicatorNode?.removeAllActions()
             indicatorNode?.color = .green
+            indicatorNode?.size.height = Constants.heightConstant
             placerLine?.run(SKAction.sequence([SKAction.fadeOut(withDuration: 0.3),SKAction.removeFromParent()]))
             
         default: break

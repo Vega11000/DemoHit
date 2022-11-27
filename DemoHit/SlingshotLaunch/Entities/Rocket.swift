@@ -9,7 +9,6 @@ import SpriteKit
 
 final class Rocket {
     
-    let color = UIColor(red: CGFloat(drand48()), green: CGFloat(drand48()), blue: CGFloat(drand48()), alpha: 1.0)
     let node: SKNode
     
     let spaceshipCategory: UInt32 = 0x1 << 1
