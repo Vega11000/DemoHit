@@ -8,8 +8,9 @@ final class GameScene: SKScene {
     
     static var userHasSetAVector: Bool = false                  //Задал ли пользователь вектор движению ракеты
     private let panGestureRecognizer = UIPanGestureRecognizer()
-    private let powerIncreaseStep: Double = 50.0                //Шаг для увелечения мощности запуска ракеты
-    private let timeForMostPowerfulLaunch: Double = 10          //Время, нужное для запуска ракеты на полную мощность(потолок)
+    private let powerIncreaseStep: Double = 130.0                //Шаг для увелечения мощности запуска ракеты
+    private let timeForMostPowerfulLaunch: Double = 3          //Время, нужное для запуска ракеты на полную мощность(потолок)
+    var launchPower: Double = 0
     
     private var timeAtTouchDown = Date.timeIntervalSinceReferenceDate
     private lazy var locationOfTouchDown = CGPoint()
@@ -22,6 +23,7 @@ final class GameScene: SKScene {
     }
     
     override func didMove(to view: SKView) {
+        physicsWorld.contactDelegate = self
         setNodes()
         addChilds()
         setupGestureRecognizer()
@@ -33,6 +35,7 @@ final class GameScene: SKScene {
         if userTaped {
             let durationOfPress = Date.timeIntervalSinceReferenceDate - timeAtTouchDown
             let levelLaunchPower = durationOfPress.truncatingRemainder(dividingBy: timeForMostPowerfulLaunch)
+            launchPower = levelLaunchPower * powerIncreaseStep
             
             if levelLaunchPower < (timeForMostPowerfulLaunch / 3) {
                 indicatorNode?.color = .green
@@ -45,8 +48,6 @@ final class GameScene: SKScene {
     }
 }
 
-// MARK: - Private methods
-
 private extension GameScene {
     
     func setNodes() {
@@ -54,9 +55,9 @@ private extension GameScene {
                              at: CGPoint(x: frame.size.width/2, y: frame.size.height/2),
                              level: 0)
         
-        indicatorNode = SKSpriteNode(color: .green, size: CGSize(width: Constants.widthConstant, height: Constants.heightConstant))
-        let pointForIndicator = CGPoint(x: size.width / 5, y: size.height / 6)
-        indicatorNode?.position = pointForIndicator
+        indicatorNode = setNode(an: nil, at: CGPoint(x: size.width / 5, y: size.height / 6), level: 0)
+        indicatorNode?.size = CGSize(width: Constants.widthConstant, height: Constants.heightConstant)
+        indicatorNode?.color = .green
     }
     
     func addChilds() {
@@ -78,7 +79,7 @@ private extension GameScene {
         gravitySystem.add(planet: mediumPlanet)
         gravitySystem.add(planet: bigPlanet)
         
-        let rocket = Rocket(mass: 20)
+        let rocket = Rocket(mass: 20, imageName: "rocket")
         rocket.position = CGPoint(x: size.width / 2, y: size.height / 6)
         
         gravitySystem.addRocket(rocket: rocket)
@@ -133,11 +134,6 @@ private extension GameScene {
             
         case .ended, .failed:
             GameScene.userHasSetAVector = true
-            let durationOfPress = Date.timeIntervalSinceReferenceDate - timeAtTouchDown
-            let levelLaunchPower = (Double(durationOfPress).truncatingRemainder(dividingBy: timeForMostPowerfulLaunch))
-            let launchPower = levelLaunchPower * powerIncreaseStep    //Сила может быть от 0 до 500
-
-            print(launchPower)
             
             var panVector = create(a: locationOfTouchDown, b: touchLocation)
             panVector = normalize(a: panVector)
@@ -154,6 +150,13 @@ private extension GameScene {
     }
 }
 
+extension GameScene: SKPhysicsContactDelegate {
+    
+    func didBegin(_ contact: SKPhysicsContact) {
+//        print("contact detected")
+    }
+}
+
 extension GameScene: UIGestureRecognizerDelegate {
     
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
@@ -165,44 +168,3 @@ extension GameScene: UIGestureRecognizerDelegate {
         return true
     }
 }
-
-// MARK: Touches
-
-//extension GameScene {                                 //Пока не знаю, нужно это или нет (Код Ильи)
-//
-//    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-//        guard let knob = knob else { return }
-//
-//        for touch in touches {
-//            let location = touch.location(in: knob)
-//            knobAction = knob.frame.contains(location)
-//        }
-//    }
-//
-//    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-//        if !knobAction { return }
-//
-//        guard let knob = knob, let knobArea = knobArea else { return }
-//
-//        let knobRadius: CGFloat = 50
-//
-//        for touch in touches {
-//            let position = touch.location(in: knobArea)
-//
-//
-//            let length = sqrt(pow(position.y, 2) + pow(position.x, 2))
-//            let angle = atan2(position.y, position.x)
-//
-//            if knobRadius > length {
-//                knob.position = position
-//            } else {
-//                knob.position = CGPoint(x: cos(angle) * knobRadius, y: sin(angle) * knobRadius)
-//            }
-//        }
-//    }
-//
-//    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-//
-//    }
-//
-//}

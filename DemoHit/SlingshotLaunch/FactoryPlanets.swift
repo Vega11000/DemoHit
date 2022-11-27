@@ -10,14 +10,17 @@ import Foundation
 final class FactoryPlanets {
     
     func getSmallPlanet() -> Planet {
-        return Planet(mass: 40)
+        let planet = Planet(mass: 40, imageName: "earth")
+        return planet
     }
     
     func getMediumPlanet() -> Planet {
-        return Planet(mass: 70)
+        let planet = Planet(mass: 70, imageName: "earth")
+        return planet
     }
     
     func getBigPlanet() -> Planet {
-        return Planet(mass: 100)
+        let planet = Planet(mass: 100, imageName: "earth")
+        return planet
     }
 }

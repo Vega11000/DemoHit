@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		63C3CC722932782F0088EEC7 /* Rocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C3CC6F2932782F0088EEC7 /* Rocket.swift */; };
-		63C3CC732932782F0088EEC7 /* PhysicalBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C3CC702932782F0088EEC7 /* PhysicalBody.swift */; };
 		63C3CC742932782F0088EEC7 /* Planet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C3CC712932782F0088EEC7 /* Planet.swift */; };
 		63C3CC782932783A0088EEC7 /* GravitySystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C3CC752932783A0088EEC7 /* GravitySystem.swift */; };
 		63C3CC792932783A0088EEC7 /* FactoryPlanets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C3CC762932783A0088EEC7 /* FactoryPlanets.swift */; };
@@ -26,7 +25,6 @@
 
 /* Begin PBXFileReference section */
 		63C3CC6F2932782F0088EEC7 /* Rocket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rocket.swift; sourceTree = "<group>"; };
-		63C3CC702932782F0088EEC7 /* PhysicalBody.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhysicalBody.swift; sourceTree = "<group>"; };
 		63C3CC712932782F0088EEC7 /* Planet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Planet.swift; sourceTree = "<group>"; };
 		63C3CC752932783A0088EEC7 /* GravitySystem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GravitySystem.swift; sourceTree = "<group>"; };
 		63C3CC762932783A0088EEC7 /* FactoryPlanets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FactoryPlanets.swift; sourceTree = "<group>"; };
@@ -59,7 +57,6 @@
 			isa = PBXGroup;
 			children = (
 				63C3CC6F2932782F0088EEC7 /* Rocket.swift */,
-				63C3CC702932782F0088EEC7 /* PhysicalBody.swift */,
 				63C3CC712932782F0088EEC7 /* Planet.swift */,
 			);
 			path = Entities;
@@ -204,7 +201,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				63C3CC732932782F0088EEC7 /* PhysicalBody.swift in Sources */,
 				63C3CC782932783A0088EEC7 /* GravitySystem.swift in Sources */,
 				8DD1CE16292E85B70051BB38 /* TabBarController.swift in Sources */,
 				8DD1CE18292E85CD0051BB38 /* NavigationController.swift in Sources */,
@@ -355,7 +351,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 7QM3B3CVCZ;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = DemoHit/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -382,7 +378,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 7QM3B3CVCZ;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = DemoHit/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

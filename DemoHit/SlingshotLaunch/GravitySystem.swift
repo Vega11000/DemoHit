@@ -14,8 +14,9 @@ final class GravitySystem : SKNode {
     private var lineTrailFadeDuration = 2.5
     
     func add(planet: Planet) {
+        planet.node.physicsBody?.isDynamic = false
         planets.append(planet)
-        self.addChild(planet.node)
+        addChild(planet.node)
     }
     
     func addRocket(rocket: Rocket) {
@@ -45,7 +46,7 @@ final class GravitySystem : SKNode {
             let lineSeg = SKShapeNode(path: path)
             lineSeg.strokeColor = rocket.color
             lineSeg.fillColor = rocket.color
-            self.addChild(lineSeg)
+            addChild(lineSeg)
 
             lineSeg.run(SKAction.sequence([SKAction.fadeOut(withDuration: lineTrailFadeDuration), SKAction.removeFromParent()]))
         }

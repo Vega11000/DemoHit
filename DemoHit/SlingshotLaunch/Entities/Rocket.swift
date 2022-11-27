@@ -7,7 +7,49 @@
 
 import SpriteKit
 
-final class Rocket: PhysicalBody {
+final class Rocket {
+    
+    let color = UIColor(red: CGFloat(drand48()), green: CGFloat(drand48()), blue: CGFloat(drand48()), alpha: 1.0)
+    let node: SKNode
+    
+    let spaceshipCategory: UInt32 = 0x1 << 1
+    let planetCategory: UInt32 = 0x1 << 0
+    
+    var position : CGPoint {
+        get {
+            return node.position
+        } set {
+            node.position = newValue
+        }
+    }
+    
+    var mass : CGFloat {
+        get {
+            return node.physicsBody!.mass
+        } set {
+            node.physicsBody!.mass = newValue
+        }
+    }
+    
+    var lastPosition : CGPoint?
+        
+    init(mass: CGFloat, imageName: String) {
+
+        let texture = SKTexture(imageNamed: "rocket2")
+        let shapeNode = SKSpriteNode(texture: texture, size: CGSize(width: 40, height: 80))
+        let body = SKPhysicsBody(texture: shapeNode.texture!, size: shapeNode.size)
+        body.mass = mass
+        body.affectedByGravity = false
+        body.allowsRotation = false
+
+        shapeNode.physicsBody = body
+        body.categoryBitMask = spaceshipCategory
+        body.collisionBitMask = planetCategory
+        body.contactTestBitMask = planetCategory
+        
+        shapeNode.zPosition = 2
+        node = shapeNode
+    }
     
     //TODO добавить свойство bool значение, есть вектор или нет
     
@@ -22,5 +64,6 @@ final class Rocket: PhysicalBody {
         let forceVector = mult(a: direction, b: force)                          //вектор перемножаем на силу притяжения
         
         node.physicsBody?.applyForce(forceVector)
+        node.zRotation = -atan2(node.physicsBody!.velocity.dx, node.physicsBody!.velocity.dy)
     }
 }

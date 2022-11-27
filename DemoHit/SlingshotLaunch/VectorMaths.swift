@@ -23,6 +23,14 @@ func mult(a: CGVector, b: CGFloat) -> CGVector {
     return CGVector(dx: a.dx * b ,dy: a.dy * b)
 }
 
+func multVectors(a: CGVector, b: CGVector) -> CGFloat {
+    return CGFloat(a.dx * b.dx + a.dy * b.dy)
+}
+
+func angleBetweenVectors(a: CGVector, b: CGVector) -> CGFloat {
+    return acos(multVectors(a: a, b: b) / (length(a: a) * length(a: b))) * 180 / .pi
+}
+
 func length(a: CGVector) -> CGFloat {
     return sqrt(CGFloat(a.dx * a.dx) + CGFloat(a.dy * a.dy))
 }
