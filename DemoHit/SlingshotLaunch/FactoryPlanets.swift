@@ -7,19 +7,19 @@
 
 import Foundation
 
-final class FactoryPlanets {
+final class PlanetFactory {
     
-    func getSmallPlanet() -> Planet {
+    func makeSmallPlanet() -> Planet {
         let planet = Planet(mass: 40, imageName: "earth")
         return planet
     }
     
-    func getMediumPlanet() -> Planet {
+    func makeMediumPlanet() -> Planet {
         let planet = Planet(mass: 70, imageName: "earth")
         return planet
     }
     
-    func getBigPlanet() -> Planet {
+    func makeBigPlanet() -> Planet {
         let planet = Planet(mass: 100, imageName: "earth")
         return planet
     }

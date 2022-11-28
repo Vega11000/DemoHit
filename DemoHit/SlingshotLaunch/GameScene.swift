@@ -62,9 +62,9 @@ private extension GameScene {
     }
     
     func setNodesInGravitySystem() {
-        let factory = FactoryPlanets()
-        let mediumPlanet = factory.getMediumPlanet()
-        let bigPlanet = factory.getBigPlanet()
+        let factory = PlanetFactory()
+        let mediumPlanet = factory.makeMediumPlanet()
+        let bigPlanet = factory.makeBigPlanet()
         mediumPlanet.position = CGPoint(x: size.width / 1.3, y: size.height / 2.2)
         bigPlanet.position = CGPoint(x: size.width / 3, y: size.height / 1.3)
         
@@ -156,11 +156,20 @@ private extension GameScene {
         default: break
         }
     }
+    
+    func displayGameOver() {
+        GameScene.userHasSetAVector = false
+        let transition = SKTransition.crossFade(withDuration: 0.5)
+        let gameOver = GameOverScene(size: size)
+        gameOver.scaleMode = scaleMode
+        view?.presentScene(gameOver, transition: transition)
+    }
 }
 
 extension GameScene: SKPhysicsContactDelegate {
     
     func didBegin(_ contact: SKPhysicsContact) {
+        displayGameOver()
 //        print("contact detected")
     }
 }
