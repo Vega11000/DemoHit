@@ -17,11 +17,12 @@ final class GameResultViewController: UIViewController {
     }()
 
     override func viewDidLoad() {
-        showResult()
         super.viewDidLoad()
+        showResult()
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
         dismiss(animated: false)
     }
     

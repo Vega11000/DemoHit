@@ -10,11 +10,17 @@ import SpriteKit
 import GameplayKit
 
 class SwipeViewController: UIViewController {
+    private lazy var spriteView: SKView = SKView(frame: UIScreen.main.bounds)
+    
+    override func loadView() {
+        view = spriteView
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view = SKView(frame: view.bounds)
-        if let view = self.view as! SKView? {
+        view = spriteView
+        guard let view = view as? SKView else { return }
+//        if let view = self.view as! SKView? {
             let scene = SwipeScene(size: self.view.bounds.size)
             scene.viewController = self
             scene.scaleMode = .aspectFit
@@ -25,7 +31,7 @@ class SwipeViewController: UIViewController {
             view.ignoresSiblingOrder = true
             view.showsFPS = true
             view.showsNodeCount = true
-        }
+//        }
     }
 
     override var shouldAutorotate: Bool {
@@ -38,9 +44,5 @@ class SwipeViewController: UIViewController {
         } else {
             return .all
         }
-    }
-
-    override var prefersStatusBarHidden: Bool {
-        return true
     }
 }

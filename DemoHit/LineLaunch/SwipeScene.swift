@@ -32,6 +32,7 @@ class SwipeScene: SKScene, SKPhysicsContactDelegate {
     // MARK: - Setup scene
     
     override func didMove(to view: SKView) {
+        super.didMove(to: view)
         physicsWorld.contactDelegate = self
         anchorPoint = CGPoint(x: 0.5, y: 0.5)
         physicsWorld.speed = 200

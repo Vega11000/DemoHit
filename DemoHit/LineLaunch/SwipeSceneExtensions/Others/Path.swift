@@ -43,13 +43,6 @@ extension SwipeScene {
         return path.cgPath
     }
     
-    func vector(from firstPoint: CGPoint, to secondPoint: CGPoint) -> CGVector  {
-        var vector = CGVector()
-        vector.dx = secondPoint.x - firstPoint.x
-        vector.dy = secondPoint.y - firstPoint.y
-        return vector
-    }
-    
     func removeClosePoints(_ arrayOfPoints: [CGPoint]) -> [CGPoint] {
         var arr = [CGPoint]()
         arr.append(arrayOfPoints.first!)
