@@ -8,7 +8,7 @@
 import Foundation
 
 
-struct BitMask {
+struct BitMaskCategory {
     static let planetCategory: UInt32 = 0x1 << 0
     static let spaceshipCategory: UInt32 = 0x1 << 1
 }

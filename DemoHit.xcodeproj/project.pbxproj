@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6316A8282934A6AD0007B80C /* GameOverScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6316A8272934A6AD0007B80C /* GameOverScene.swift */; };
-		63404BC22934C14E009FB3C1 /* BitMask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63404BC12934C14E009FB3C1 /* BitMask.swift */; };
+		63404BC22934C14E009FB3C1 /* BitMaskCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63404BC12934C14E009FB3C1 /* BitMaskCategory.swift */; };
 		63C3CC722932782F0088EEC7 /* Rocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C3CC6F2932782F0088EEC7 /* Rocket.swift */; };
 		63C3CC742932782F0088EEC7 /* Planet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C3CC712932782F0088EEC7 /* Planet.swift */; };
 		63C3CC782932783A0088EEC7 /* GravitySystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C3CC752932783A0088EEC7 /* GravitySystem.swift */; };
@@ -27,7 +27,7 @@
 
 /* Begin PBXFileReference section */
 		6316A8272934A6AD0007B80C /* GameOverScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverScene.swift; sourceTree = "<group>"; };
-		63404BC12934C14E009FB3C1 /* BitMask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitMask.swift; sourceTree = "<group>"; };
+		63404BC12934C14E009FB3C1 /* BitMaskCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitMaskCategory.swift; sourceTree = "<group>"; };
 		63C3CC6F2932782F0088EEC7 /* Rocket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rocket.swift; sourceTree = "<group>"; };
 		63C3CC712932782F0088EEC7 /* Planet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Planet.swift; sourceTree = "<group>"; };
 		63C3CC752932783A0088EEC7 /* GravitySystem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GravitySystem.swift; sourceTree = "<group>"; };
@@ -125,7 +125,7 @@
 				63C3CC772932783A0088EEC7 /* VectorMaths.swift */,
 				8D8A90B3292E88390089E36B /* GameScene.swift */,
 				6316A8272934A6AD0007B80C /* GameOverScene.swift */,
-				63404BC12934C14E009FB3C1 /* BitMask.swift */,
+				63404BC12934C14E009FB3C1 /* BitMaskCategory.swift */,
 			);
 			path = SlingshotLaunch;
 			sourceTree = "<group>";
@@ -212,7 +212,7 @@
 				8DD1CE18292E85CD0051BB38 /* NavigationController.swift in Sources */,
 				8DD1CE1B292E85F70051BB38 /* LineLaunchViewController.swift in Sources */,
 				8DD1CE1E292E86210051BB38 /* SlingshotLaunchViewController.swift in Sources */,
-				63404BC22934C14E009FB3C1 /* BitMask.swift in Sources */,
+				63404BC22934C14E009FB3C1 /* BitMaskCategory.swift in Sources */,
 				63C3CC792932783A0088EEC7 /* FactoryPlanets.swift in Sources */,
 				8DD1CE01292E84800051BB38 /* AppDelegate.swift in Sources */,
 				8D8A90B4292E88390089E36B /* GameScene.swift in Sources */,
