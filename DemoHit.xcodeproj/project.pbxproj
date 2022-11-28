@@ -19,8 +19,18 @@
 		8DD1CE0D292E84820051BB38 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DD1CE0B292E84820051BB38 /* LaunchScreen.storyboard */; };
 		8DD1CE16292E85B70051BB38 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD1CE15292E85B70051BB38 /* TabBarController.swift */; };
 		8DD1CE18292E85CD0051BB38 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD1CE17292E85CD0051BB38 /* NavigationController.swift */; };
-		8DD1CE1B292E85F70051BB38 /* LineLaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD1CE1A292E85F70051BB38 /* LineLaunchViewController.swift */; };
+		8DD1CE1B292E85F70051BB38 /* SwipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD1CE1A292E85F70051BB38 /* SwipeViewController.swift */; };
 		8DD1CE1E292E86210051BB38 /* SlingshotLaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD1CE1D292E86210051BB38 /* SlingshotLaunchViewController.swift */; };
+		DB0CF12B2934E1980024BEB1 /* OnePlanet.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB0CF12A2934E1980024BEB1 /* OnePlanet.swift */; };
+		DB0CF12D2934E1C50024BEB1 /* OneRocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB0CF12C2934E1C50024BEB1 /* OneRocket.swift */; };
+		DB8868F5293411A900D31319 /* SwipeScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8868F4293411A900D31319 /* SwipeScene.swift */; };
+		DB8868F7293411E400D31319 /* BitMasks.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8868F6293411E400D31319 /* BitMasks.swift */; };
+		DB8868F92934121000D31319 /* GameResultVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8868F82934121000D31319 /* GameResultVC.swift */; };
+		DB8868FB2934125500D31319 /* Asteroids.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8868FA2934125500D31319 /* Asteroids.swift */; };
+		DB8868FD2934127F00D31319 /* Destination.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8868FC2934127F00D31319 /* Destination.swift */; };
+		DB886903293412EC00D31319 /* Path.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB886902293412EC00D31319 /* Path.swift */; };
+		DB8869052934130F00D31319 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8869042934130F00D31319 /* Result.swift */; };
+		DB8869072934132C00D31319 /* Swipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8869062934132C00D31319 /* Swipe.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,8 +48,18 @@
 		8DD1CE0E292E84820051BB38 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8DD1CE15292E85B70051BB38 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		8DD1CE17292E85CD0051BB38 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
-		8DD1CE1A292E85F70051BB38 /* LineLaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineLaunchViewController.swift; sourceTree = "<group>"; };
+		8DD1CE1A292E85F70051BB38 /* SwipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeViewController.swift; sourceTree = "<group>"; };
 		8DD1CE1D292E86210051BB38 /* SlingshotLaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlingshotLaunchViewController.swift; sourceTree = "<group>"; };
+		DB0CF12A2934E1980024BEB1 /* OnePlanet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnePlanet.swift; sourceTree = "<group>"; };
+		DB0CF12C2934E1C50024BEB1 /* OneRocket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneRocket.swift; sourceTree = "<group>"; };
+		DB8868F4293411A900D31319 /* SwipeScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeScene.swift; sourceTree = "<group>"; };
+		DB8868F6293411E400D31319 /* BitMasks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitMasks.swift; sourceTree = "<group>"; };
+		DB8868F82934121000D31319 /* GameResultVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameResultVC.swift; sourceTree = "<group>"; };
+		DB8868FA2934125500D31319 /* Asteroids.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Asteroids.swift; sourceTree = "<group>"; };
+		DB8868FC2934127F00D31319 /* Destination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Destination.swift; sourceTree = "<group>"; };
+		DB886902293412EC00D31319 /* Path.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Path.swift; sourceTree = "<group>"; };
+		DB8869042934130F00D31319 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		DB8869062934132C00D31319 /* Swipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Swipe.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,7 +126,11 @@
 		8DD1CE19292E85E70051BB38 /* LineLaunch */ = {
 			isa = PBXGroup;
 			children = (
-				8DD1CE1A292E85F70051BB38 /* LineLaunchViewController.swift */,
+				8DD1CE1A292E85F70051BB38 /* SwipeViewController.swift */,
+				DB8868F4293411A900D31319 /* SwipeScene.swift */,
+				DB8868F6293411E400D31319 /* BitMasks.swift */,
+				DB8868F82934121000D31319 /* GameResultVC.swift */,
+				DB8869082934161600D31319 /* SwipeSceneExtensions */,
 			);
 			path = LineLaunch;
 			sourceTree = "<group>";
@@ -129,6 +153,36 @@
 			children = (
 			);
 			path = Core;
+			sourceTree = "<group>";
+		};
+		DB8869082934161600D31319 /* SwipeSceneExtensions */ = {
+			isa = PBXGroup;
+			children = (
+				DB88690A2934164600D31319 /* Others */,
+				DB8869092934163000D31319 /* Sprites */,
+			);
+			path = SwipeSceneExtensions;
+			sourceTree = "<group>";
+		};
+		DB8869092934163000D31319 /* Sprites */ = {
+			isa = PBXGroup;
+			children = (
+				DB0CF12C2934E1C50024BEB1 /* OneRocket.swift */,
+				DB0CF12A2934E1980024BEB1 /* OnePlanet.swift */,
+				DB8868FA2934125500D31319 /* Asteroids.swift */,
+				DB8868FC2934127F00D31319 /* Destination.swift */,
+			);
+			path = Sprites;
+			sourceTree = "<group>";
+		};
+		DB88690A2934164600D31319 /* Others */ = {
+			isa = PBXGroup;
+			children = (
+				DB886902293412EC00D31319 /* Path.swift */,
+				DB8869042934130F00D31319 /* Result.swift */,
+				DB8869062934132C00D31319 /* Swipe.swift */,
+			);
+			path = Others;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -201,11 +255,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB0CF12D2934E1C50024BEB1 /* OneRocket.swift in Sources */,
+				DB0CF12B2934E1980024BEB1 /* OnePlanet.swift in Sources */,
 				63C3CC782932783A0088EEC7 /* GravitySystem.swift in Sources */,
 				8DD1CE16292E85B70051BB38 /* TabBarController.swift in Sources */,
+				DB8868F5293411A900D31319 /* SwipeScene.swift in Sources */,
+				DB8868FD2934127F00D31319 /* Destination.swift in Sources */,
 				8DD1CE18292E85CD0051BB38 /* NavigationController.swift in Sources */,
-				8DD1CE1B292E85F70051BB38 /* LineLaunchViewController.swift in Sources */,
+				DB8868F7293411E400D31319 /* BitMasks.swift in Sources */,
+				DB8869052934130F00D31319 /* Result.swift in Sources */,
+				8DD1CE1B292E85F70051BB38 /* SwipeViewController.swift in Sources */,
 				8DD1CE1E292E86210051BB38 /* SlingshotLaunchViewController.swift in Sources */,
+				DB8869072934132C00D31319 /* Swipe.swift in Sources */,
+				DB8868F92934121000D31319 /* GameResultVC.swift in Sources */,
+				DB886903293412EC00D31319 /* Path.swift in Sources */,
+				DB8868FB2934125500D31319 /* Asteroids.swift in Sources */,
 				63C3CC792932783A0088EEC7 /* FactoryPlanets.swift in Sources */,
 				8DD1CE01292E84800051BB38 /* AppDelegate.swift in Sources */,
 				8D8A90B4292E88390089E36B /* GameScene.swift in Sources */,
