@@ -38,9 +38,9 @@ final class Rocket {
         body.allowsRotation = false
 
         shapeNode.physicsBody = body
-        body.categoryBitMask = BitMask.spaceshipCategory
-        body.collisionBitMask = BitMask.planetCategory
-        body.contactTestBitMask = BitMask.planetCategory
+        body.categoryBitMask = BitMaskCategory.spaceshipCategory
+        body.collisionBitMask = BitMaskCategory.planetCategory
+        body.contactTestBitMask = BitMaskCategory.planetCategory
         
         shapeNode.zPosition = 2
         node = shapeNode
