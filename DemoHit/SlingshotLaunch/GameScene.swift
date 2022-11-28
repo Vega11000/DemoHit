@@ -156,12 +156,20 @@ private extension GameScene {
         default: break
         }
     }
+    
+    func displayGameOver() {
+        GameScene.userHasSetAVector = false
+        let transition = SKTransition.crossFade(withDuration: 0.5)
+        let gameOver = GameOverScene(size: size)
+        gameOver.scaleMode = scaleMode
+        view?.presentScene(gameOver, transition: transition)
+    }
 }
 
 extension GameScene: SKPhysicsContactDelegate {
     
     func didBegin(_ contact: SKPhysicsContact) {
-//        print("contact detected")
+        displayGameOver()
     }
 }
 
