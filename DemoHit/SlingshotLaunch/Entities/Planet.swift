@@ -40,9 +40,9 @@ final class Planet {
         body.allowsRotation = false
 
         shapeNode.physicsBody = body
-        body.categoryBitMask = BitMask.planetCategory
-        body.collisionBitMask = BitMask.spaceshipCategory
-        body.contactTestBitMask = BitMask.planetCategory
+        body.categoryBitMask = BitMaskCategory.planetCategory
+        body.collisionBitMask = BitMaskCategory.spaceshipCategory
+        body.contactTestBitMask = BitMaskCategory.planetCategory
         
         shapeNode.fillColor = self.color
         shapeNode.zPosition = 2

@@ -272,14 +272,11 @@
 				DB8869052934130F00D31319 /* Result.swift in Sources */,
 				8DD1CE1B292E85F70051BB38 /* SwipeViewController.swift in Sources */,
 				8DD1CE1E292E86210051BB38 /* SlingshotLaunchViewController.swift in Sources */,
-<<<<<<< HEAD
 				63404BC22934C14E009FB3C1 /* BitMaskCategory.swift in Sources */,
-=======
 				DB8869072934132C00D31319 /* Swipe.swift in Sources */,
 				DB8868F92934121000D31319 /* GameResultVC.swift in Sources */,
 				DB886903293412EC00D31319 /* Path.swift in Sources */,
 				DB8868FB2934125500D31319 /* Asteroids.swift in Sources */,
->>>>>>> origin/develop
 				63C3CC792932783A0088EEC7 /* FactoryPlanets.swift in Sources */,
 				8DD1CE01292E84800051BB38 /* AppDelegate.swift in Sources */,
 				8D8A90B4292E88390089E36B /* GameScene.swift in Sources */,
