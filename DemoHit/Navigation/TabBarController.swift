@@ -36,7 +36,7 @@ private extension TabBarController {
     
     func setupTabBar() {
         let navVCSlingshotLaunch = NavigationController(rootViewController: SlingshotLaunchViewController())
-        let navVCLineLaunch = NavigationController(rootViewController: LineLaunchViewController())
+        let navVCLineLaunch = NavigationController(rootViewController: SwipeViewController())
         
         let configuration = UIImage.SymbolConfiguration(
             pointSize: 20, weight: .semibold
