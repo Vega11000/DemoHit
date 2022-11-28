@@ -156,6 +156,7 @@ private extension GameScene {
         default: break
         }
     }
+<<<<<<< HEAD
     
     func displayGameOver() {
         GameScene.userHasSetAVector = false
@@ -164,12 +165,18 @@ private extension GameScene {
         gameOver.scaleMode = scaleMode
         view?.presentScene(gameOver, transition: transition)
     }
+=======
+>>>>>>> develop
 }
 
 extension GameScene: SKPhysicsContactDelegate {
     
     func didBegin(_ contact: SKPhysicsContact) {
+<<<<<<< HEAD
         displayGameOver()
+=======
+//        print("contact detected")
+>>>>>>> develop
     }
 }
 
